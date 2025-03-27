@@ -1,7 +1,19 @@
+"use client"
 import Link from "next/link"
-import { ChevronDown, ChevronRight, ArrowRight } from "lucide-react"
+import { ChevronDown, ChevronRight, ArrowRight,Award , Smartphone,Recycle,Database} from "lucide-react"
+import { useState } from "react"
+import Image from "next/image"
 
 export default function Home() {
+  const [activeDetail, setActiveDetail] = useState(null)
+
+  const toggleDetails = (id) => {
+    if (activeDetail === id) {
+      setActiveDetail(null)
+    } else {
+      setActiveDetail(id)
+    }
+  }
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -61,127 +73,201 @@ export default function Home() {
 
       {/* Introduction Section */}
       <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-start mb-8">
-            <div className="flex items-center mb-4 md:mb-0">
-              <div className="w-2 h-2 bg-black rounded-full mr-2"></div>
-              <span className="text-sm">Introduction</span>
-            </div>
-            <div className="text-sm">terra.org</div>
-            <div className="text-sm">2025</div>
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row justify-between items-start mb-8">
+          <div className="flex items-center mb-4 md:mb-0">
+            <div className="w-2 h-2 bg-black rounded-full mr-2"></div>
+            <span className="text-sm">Introduction</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold max-w-2xl mb-16">
-           THE NEW WAY OF E-WASTE MANAGEMENT
-          </h2>
+          <div className="text-sm">terra.org</div>
+          <div className="text-sm">2025</div>
+        </div>
+        <h2 className="text-4xl md:text-5xl font-bold max-w-2xl mb-16">THE NEW WAY OF E-WASTE MANAGEMENT</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="rounded-lg overflow-hidden h-80 bg-gray-200 flex items-center justify-center">
-              <img src="/hero2.jpg" alt="Image 1" className="w-full h-full object-cover" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="rounded-lg overflow-hidden h-80 bg-gray-200 flex items-center justify-center">
+            <img src="/hero2.jpg" alt="E-waste management" className="w-full h-full object-cover" />
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="border-t border-gray-300 pt-6">
+              <h3 className="font-medium mb-4">SDG 12</h3>
+              <div className="flex justify-center mb-4">
+                <div className="w-12 h-12 flex items-center justify-center">
+                  <Award className="w-8 h-8" />
+                </div>
+              </div>
+              <button className="text-sm font-medium" onClick={() => toggleDetails("sdg12")}>
+                VIEW DETAILS
+              </button>
+              {activeDetail === "sdg12" && (
+                <div className="mt-4 text-sm">
+                  <p>
+                    Sustainable Development Goal 12 focuses on responsible consumption and production patterns, which
+                    directly aligns with Terra's mission to manage e-waste effectively.
+                  </p>
+                </div>
+              )}
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="border-t border-gray-300 pt-6">
-                <h3 className="font-medium mb-4">Solar Energy</h3>
-                <div className="flex justify-center mb-4">
-                  <div className="w-12 h-12 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2">
-                      <circle cx="12" cy="12" r="5" />
-                      <line x1="12" y1="1" x2="12" y2="3" />
-                      <line x1="12" y1="21" x2="12" y2="23" />
-                      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                      <line x1="1" y1="12" x2="3" y2="12" />
-                      <line x1="21" y1="12" x2="23" y2="12" />
-                      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                    </svg>
-                  </div>
+            <div className="border-t border-gray-300 pt-6">
+              <h3 className="font-medium mb-4">Consumer Disposal</h3>
+              <div className="flex justify-center mb-4">
+                <div className="w-12 h-12 flex items-center justify-center">
+                  <Smartphone className="w-8 h-8" />
                 </div>
-                <button className="text-sm font-medium">VIEW DETAILS</button>
               </div>
-              <div className="border-t border-gray-300 pt-6">
-                <h3 className="font-medium mb-4">Hydro Energy</h3>
-                <div className="flex justify-center mb-4">
-                  <div className="w-12 h-12 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M12 2v6m0 0c-3.5 0-6.5 1-8 3 1.5-2 4.5-3 8-3s6.5 1 8 3c-1.5-2-4.5-3-8-3zm0 0v14m-8-5c1.5 2 4.5 3 8 3s6.5-1 8-3m-16-4c1.5 2 4.5 3 8 3s6.5-1 8-3" />
-                    </svg>
-                  </div>
+              <button className="text-sm font-medium" onClick={() => toggleDetails("consumer")}>
+                VIEW DETAILS
+              </button>
+              {activeDetail === "consumer" && (
+                <div className="mt-4 text-sm">
+                  <p>
+                    Terra simplifies the e-waste disposal process for consumers, providing convenient drop-off points
+                    and pickup services for old electronics.
+                  </p>
                 </div>
-                <button className="text-sm font-medium">VIEW DETAILS</button>
-              </div>
-              <div className="border-t border-gray-300 pt-6">
-                <h3 className="font-medium mb-4">Geothermal Energy</h3>
-                <div className="flex justify-center mb-4">
-                  <div className="w-12 h-12 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M12 2v20M2 12h20M7 12c0-2.76 2.24-5 5-5s5 2.24 5 5-2.24 5-5 5-5-2.24-5-5z" />
-                    </svg>
-                  </div>
+              )}
+            </div>
+            <div className="border-t border-gray-300 pt-6">
+              <h3 className="font-medium mb-4">Recycler Network</h3>
+              <div className="flex justify-center mb-4">
+                <div className="w-12 h-12 flex items-center justify-center">
+                  <Recycle className="w-8 h-8" />
                 </div>
-                <button className="text-sm font-medium">VIEW DETAILS</button>
               </div>
-              <div className="border-t border-gray-300 pt-6 bg-gray-900 text-white p-4">
-                <h3 className="font-medium mb-4">Wind Energy</h3>
-                <div className="flex justify-center mb-4">
-                  <div className="w-12 h-12 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 0v8m-8-8h16" />
-                    </svg>
-                  </div>
+              <button className="text-sm font-medium" onClick={() => toggleDetails("recycler")}>
+                VIEW DETAILS
+              </button>
+              {activeDetail === "recycler" && (
+                <div className="mt-4 text-sm">
+                  <p>
+                    Our platform connects certified e-waste recyclers with consumers, ensuring proper disposal and
+                    maximum resource recovery from electronic waste.
+                  </p>
                 </div>
-                <p className="text-sm mb-4">Wind turbines convert the kinetic energy of wind into electrical power.</p>
-                <button className="text-sm font-medium">VIEW DETAILS</button>
+              )}
+            </div>
+            <div className="border-t border-gray-300 pt-6 bg-gray-900 text-white p-4">
+              <h3 className="font-medium mb-4">Reseller Marketplace</h3>
+              <div className="flex justify-center mb-4">
+                <div className="w-12 h-12 flex items-center justify-center">
+                  <Database className="w-8 h-8" />
+                </div>
               </div>
+              <p className="text-sm mb-4">
+                Our marketplace connects refurbishers and resellers with consumers looking for affordable, sustainable
+                electronics.
+              </p>
+              <button className="text-sm font-medium" onClick={() => toggleDetails("reseller")}>
+                VIEW DETAILS
+              </button>
+              {activeDetail === "reseller" && (
+                <div className="mt-4 text-sm">
+                  <p>
+                    Terra's reseller network gives electronic devices a second life, reducing waste and making
+                    technology more accessible.
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Sustainable Future Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-start mb-8">
-            <div className="flex items-center mb-4 md:mb-0">
-              <div className="w-2 h-2 bg-black rounded-full mr-2"></div>
-              <span className="text-sm">Benefits</span>
-            </div>
-            <div className="text-sm">terra.org</div>
-            <div className="text-sm">2024</div>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold max-w-2xl mb-8">
-          Innovate. Recycle. Thrive
-          </h2>
-          <p className="max-w-2xl text-sm mb-16">
-          A smarter world starts with smarter choices. By transforming e-waste into a resource, we create a cycle of innovation that benefits both people and the planet
-          </p>
+      <section className="w-full bg-white">
+      {/* Header */}
+      <div className="container mx-auto px-4 py-3 flex justify-between items-center text-sm">
+        <div className="flex items-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="lucide lucide-leaf"
+          >
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+          </svg>
+          <span className="font-medium">Benefits</span>
+        </div>
+        <div>terra.org</div>
+        <div>2025</div>
+      </div>
 
-          <div className="relative h-96 bg-gray-200 rounded-lg overflow-hidden flex items-center justify-center">
-            <img src="/hero3.jpg" alt="Image 1" className="w-full h-full object-cover" />
-            <div className="absolute bottom-8 right-8 bg-white p-6 rounded-lg max-w-xs">
-              <h3 className="font-medium mb-2">Environmental Benefits</h3>
-              <p className="text-sm text-gray-600 mb-4">
-              Technology evolves, but waste doesn’t have to pile up. By embracing smart, digital solutions, we can turn e-waste into opportunity—recycling responsibly, reducing impact, and building a future where innovation and sustainability go hand in hand
-              </p>
-              <div className="flex justify-between text-sm">
-                <button className="flex items-center">PREVIOUS</button>
-                <button className="flex items-center">
-                  NEXT <ChevronRight className="ml-1 w-4 h-4" />
-                </button>
-              </div>
-            </div>
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          {/* Left column - Main heading */}
+          <div>
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+            Innovate. Recycle. Thrive
+            </h1>
+          </div>
+
+          {/* Right column - Description */}
+          <div>
+            <p className="text-sm md:text-base uppercase tracking-wide">
+            A smarter world starts with smarter choices. By transforming e-waste into a resource, we create a cycle of innovation that benefits both people and the planet
+
+
+            </p>
           </div>
         </div>
-      </section>
+      </div>
 
+      {/* Full-width image section with card overlay */}
+      <div className="relative w-full h-[400px] md:h-[500px]">
+        {/* Background image */}
+        <Image
+          src="/hero3.jpg"
+          alt="Aerial view of sustainable landscape"
+          fill
+          className="object-cover"
+          priority
+        />
+
+        {/* Card overlay - Environmental Benefits */}
+        <div className="absolute left-[5%] top-[10%] bg-white p-6 max-w-[300px] rounded-lg shadow-lg">
+          <h2 className="text-2xl font-bold mb-4">Environmental Benefits</h2>
+          <p className="text-gray-700">
+            later
+          </p>
+        </div>
+
+        {/* Card overlay - Economic Benefits */}
+        <div className="absolute left-[40%] top-[10%] bg-white p-6 max-w-[300px] rounded-lg shadow-lg">
+          <h2 className="text-2xl font-bold mb-4">Economic Benefits</h2>
+          <p className="text-gray-700">
+           later
+          </p>
+        </div>
+
+        <div className="absolute left-[70%] top-[10%] bg-white p-6 max-w-[300px] rounded-lg shadow-lg">
+          <h2 className="text-2xl font-bold mb-4"> USP</h2>
+          <p className="text-gray-700">
+           later
+          </p>
+        </div>
+
+        
+      </div>
+              
+      
+    </section>
 
       {/* Footer */}
       <footer className="py-12 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between">
             <div>
-              <h3 className="font-bold text-2xl mb-4">SUERGY</h3>
+              <h3 className="font-bold text-2xl mb-4">TERRA</h3>
               <p className="max-w-xs text-sm text-gray-600">
-                Leading the transition to sustainable energy solutions for a cleaner future.
+                 The solution for a cleaner future.
               </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-8 md:mt-0">
@@ -239,7 +325,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-gray-600">© 2024 SUERGY. All rights reserved.</p>
+            <p className="text-sm text-gray-600">© 2025 TERRA. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link href="#" className="text-gray-600 hover:text-gray-900">
                 Terms
