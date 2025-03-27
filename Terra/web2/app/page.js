@@ -143,7 +143,7 @@ export default function Home() {
               <div className="w-2 h-2 bg-black rounded-full mr-2"></div>
               <span className="text-sm">Benefits</span>
             </div>
-            <div className="text-sm">suergy.org</div>
+            <div className="text-sm">terra.org</div>
             <div className="text-sm">2024</div>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold max-w-2xl mb-8">
@@ -154,7 +154,7 @@ export default function Home() {
           </p>
 
           <div className="relative h-96 bg-gray-200 rounded-lg overflow-hidden flex items-center justify-center">
-            <span className="text-gray-500">Environmental benefits image will go here</span>
+            <img src="hero3.jpg" ></img>
             <div className="absolute bottom-8 right-8 bg-white p-6 rounded-lg max-w-xs">
               <h3 className="font-medium mb-2">Environmental Benefits</h3>
               <p className="text-sm text-gray-600 mb-4">

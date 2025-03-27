@@ -286,7 +286,7 @@ export default function MyImpact() {
                     </ResponsiveContainer>
                   </div>
                   <div className="mt-2 text-center text-sm text-green-700">
-                    You've saved{" "}
+                    Youve saved{" "}
                     <span className="font-bold">{Math.round((impactData.totalCarbonSaved / 85.2 - 1) * 100)}%</span>{" "}
                     more CO₂ than the average user!
                   </div>
@@ -296,7 +296,7 @@ export default function MyImpact() {
               <Card className="bg-white border-green-100">
                 <CardHeader>
                   <CardTitle className="text-green-800">Recent Achievements</CardTitle>
-                  <CardDescription>Milestones you've reached through recycling</CardDescription>
+                  <CardDescription>Milestones you have reached through recycling</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
