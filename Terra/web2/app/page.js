@@ -48,11 +48,13 @@ export default function Home() {
           <h1 className="text-white text-6xl md:text-8xl font-bold mb-4">
             THE FUTURE IS NOW
           </h1>
-          <p className="text-black text-xl  max-w-md mb-8">
+          <p className="text-white text-xl  max-w-md mb-8">
            JOIN TERRA.ORG , BE A PART OF THE FUTURE.
           </p>
           <button className="flex items-center text-white">
-            Explore More <ChevronDown className="ml-2" />
+          <Link href="/user-dashboard" className="bg-white text-black px-6 py-2 rounded-full font-medium">
+                Join the Terra Community
+          </Link>
           </button>
         </div>
       </section>
@@ -154,7 +156,7 @@ export default function Home() {
           </p>
 
           <div className="relative h-96 bg-gray-200 rounded-lg overflow-hidden flex items-center justify-center">
-            <img src="hero3.jpg" ></img>
+            <img src="/hero3.jpg" alt="Image 1" className="w-full h-full object-cover" />
             <div className="absolute bottom-8 right-8 bg-white p-6 rounded-lg max-w-xs">
               <h3 className="font-medium mb-2">Environmental Benefits</h3>
               <p className="text-sm text-gray-600 mb-4">

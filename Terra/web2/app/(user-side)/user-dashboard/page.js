@@ -243,7 +243,7 @@ export default function UserDashboard() {
         <div className="flex h-14 items-center border-b border-green-100 px-4">
           <div className="flex items-center gap-2 font-semibold text-green-800">
             <Leaf className="h-5 w-5 text-green-600" />
-            <span>EcoRecycle Portal</span>
+            <span>terra.org</span>
           </div>
         </div>
         <nav className="flex-1 overflow-auto py-4">
@@ -601,7 +601,7 @@ export default function UserDashboard() {
           <DialogHeader className="bg-green-600 text-white p-4">
             <DialogTitle className="flex items-center gap-2">
               <MessageCircle className="h-5 w-5" />
-              EcoBot Assistant
+              Terra Assistant
             </DialogTitle>
             <DialogDescription className="text-green-100">Ask me anything about e-waste recycling</DialogDescription>
           </DialogHeader>
