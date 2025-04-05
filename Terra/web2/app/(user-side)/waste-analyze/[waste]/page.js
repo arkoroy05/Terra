@@ -51,7 +51,7 @@ export default function ResultsPage() {
           <Card className="p-6 col-span-1 bg-green-50 border-green-200">
             <h2 className="text-2xl font-bold text-green-700 mb-4 flex items-center">
               <Cpu className="mr-2 h-5 w-5" />
-              {params.waste}
+              Lithium Ion Battery
             </h2>
 
           
@@ -59,7 +59,7 @@ export default function ResultsPage() {
             <div className="bg-white p-4 rounded-md">
               <h3 className="text-xl font-semibold text-green-700">{}</h3>
               <p className="text-gray-600 mt-2">
-                lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Lithium-ion batteries are rechargeable energy storage devices widely used in smartphones, laptops, electric vehicles, and renewable energy systems. They work by moving lithium ions between a positive cathode and a negative anode during charging and discharging. Known for their high energy density, lightweight design, and long cycle life, lithium-ion batteries have become the go-to choice for portable and sustainable power. However, they require careful handling due to risks like overheating and degradation over time.
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm">Lithium-ion</span>
@@ -116,14 +116,7 @@ export default function ResultsPage() {
               Nearby Disposal Sites
             </h2>
 
-            <div className="relative w-full h-64 mb-4 rounded-md overflow-hidden">
-              <Image
-                src="/placeholder.svg?height=300&width=400"
-                alt="Map of nearby disposal sites"
-                fill
-                className="object-cover"
-              />
-            </div>
+         
 
             <div className="space-y-4">
               {disposalSites.map((site, index) => (

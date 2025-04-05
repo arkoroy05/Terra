@@ -182,7 +182,7 @@ export default function FacilityDashboard() {
         <div className="flex h-14 items-center border-b border-green-100 px-4">
           <div className="flex items-center gap-2 font-semibold text-green-800">
             <Leaf className="h-5 w-5 text-green-600" />
-            <span>EcoRecycle Admin</span>
+            <span>Terra Admin</span>
           </div>
         </div>
         <nav className="flex-1 overflow-auto py-4">

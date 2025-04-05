@@ -137,7 +137,7 @@ const initialMessages = [
   {
     id: 1,
     sender: "bot",
-    text: "👋 Hello! I'm EcoBot, your recycling assistant. How can I help you today?",
+    text: "👋 Hello! I'm TerraBot, your recycling assistant. How can I help you today?",
     time: "Just now",
   },
   {
@@ -228,7 +228,7 @@ export default function UserDashboard() {
       const botResponse = {
         id: messages.length + 2,
         sender: "bot",
-        text: "Thank you for your message. Our team will help you with your recycling needs. Is there anything specific you'd like to know about e-waste disposal?",
+        text: "Lithium-ion batteries are rechargeable batteries that store and release energy by moving lithium ions between two ends. They are better for the environment than fossil fuels because they help power electric cars and store clean energy. But mining lithium and throwing batteries away improperly can harm nature, so recycling and safe use are important.",
         time: "Just now",
       }
 
@@ -332,8 +332,8 @@ export default function UserDashboard() {
               <AvatarFallback className="bg-green-100 text-green-800">JD</AvatarFallback>
             </Avatar>
             <div>
-              <div className="font-medium text-sm">John Doe</div>
-              <div className="text-xs text-green-600">john.doe@example.com</div>
+              <div className="font-medium text-sm">Arko Roy</div>
+              <div className="text-xs text-green-600">royarko@example.com</div>
             </div>
             <Button variant="ghost" size="icon" className="ml-auto h-8 w-8 text-green-700">
               <LogOut className="h-4 w-4" />
