@@ -232,28 +232,7 @@ export default function Home() {
         />
 
         {/* Card overlay - Environmental Benefits */}
-        <div className="absolute left-[5%] top-[10%] bg-white p-6 max-w-[300px] rounded-lg shadow-lg">
-          <h2 className="text-2xl font-bold mb-4">Environmental Benefits</h2>
-          <p className="text-gray-700">
-            later
-          </p>
-        </div>
-
-        {/* Card overlay - Economic Benefits */}
-        <div className="absolute left-[40%] top-[10%] bg-white p-6 max-w-[300px] rounded-lg shadow-lg">
-          <h2 className="text-2xl font-bold mb-4">Economic Benefits</h2>
-          <p className="text-gray-700">
-           later
-          </p>
-        </div>
-
-        <div className="absolute left-[70%] top-[10%] bg-white p-6 max-w-[300px] rounded-lg shadow-lg">
-          <h2 className="text-2xl font-bold mb-4"> USP</h2>
-          <p className="text-gray-700">
-           later
-          </p>
-        </div>
-
+       
         
       </div>
               
